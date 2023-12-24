@@ -63,6 +63,7 @@ namespace WebQuanLyResort.ViewModel
         [Required(ErrorMessage = "Ngày sinh không được để trống.")]
         [MinimumAge(18, ErrorMessage = "Ngày sinh phải từ 18 tuổi trở lên.")]
         public string DateOfBirth { get; set; }
+        [Required(ErrorMessage = "Địa chỉ không được để trống.")]
         public string Address { get; set; }
         [Required(ErrorMessage = "Họ tên không được để trống.")]
         public string HoTen { get; set; }
