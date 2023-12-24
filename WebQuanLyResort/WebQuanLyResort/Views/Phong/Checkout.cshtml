@@ -6,6 +6,11 @@
 @{ 
     ViewBag.acong = "@";
 }
+<script>
+    window.onload = function () {
+        checkInputs();
+    };
+</script>
 <div style="padding-top:80px; padding-bottom:10px;">
     <form action="/phong/xacnhanthongtin" method="post">
         <div class="row">
@@ -164,7 +169,7 @@
 </div>
 <script>
     function checkInputs() {
-        //var tenKhachHang = document.getElementById('ten_khachhang').value.trim();
+        var tenKhachHang = document.getElementById('ten_khachhang').value.trim();
         var ngaySinh = document.getElementById('ngay_sinh').value.trim();
         var diaChi = document.getElementById('dia_chi').value.trim();
         var sdt = document.getElementById('sdt').value.trim();
@@ -173,7 +178,7 @@
 
         var submitButton = document.querySelector('.btn.btn-warning.text-white');
 
-        if (/*tenKhachHang !== '' &&*/ ngaySinh !== ''  && sdt !== '' && cmnd !== '' && email !== '') {
+        if (tenKhachHang !== '' && ngaySinh !== '' && sdt !== '' && cmnd !== '' && email !== '' && diaChi !== '') {
             submitButton.removeAttribute('disabled');
         } else {
             submitButton.setAttribute('disabled', 'disabled');
@@ -186,5 +191,5 @@
         input.addEventListener('input', checkInputs);
     });
 
-
+    window.addEventListener('load', checkInputs);
 </script>
